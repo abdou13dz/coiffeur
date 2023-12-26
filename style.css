@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
 
 * {
     margin: 10;
@@ -12,18 +12,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(171, 175, 175);
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2px 10%;
     box-shadow: 0 0 20px rgb(0, 0, 0);
     z-index: 100;
-}
-
-.menu_icons {
-    width: 35px;
-    cursor: pointer;
+    padding-top: 0px; /* Ajustez selon vos besoins */
+    align-items: center;
 }
 
 .logo {
@@ -35,56 +32,86 @@ header {
 
 .menu {
     display: flex;
-    align-items: center;
-
-   
-}
-.menu li{
-    padding-left: 45px;
-    list-style-type: none;
-}
-.menu a{
-    display: block;
-    margin: 0.5em;               /* Marges externes (1 valeurs = 4 directions) */
-    padding: 5px 0px;             /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/               
-    width: 80px;         
-    text-align: center;
-    background-color: #a1beb9;    /* Couleur d'arrière-plan */
-    color: #000000;                  /* Couleur du texte */
-    text-decoration: none;        /* Suppression du soulignement */
-    border: 1px solid #fff;       /* Ajout d'une bordure */
-    border-radius: 4px
-    
+    justify-content: center; /* Centre le menu horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
 }
 
-body{
-    overflow: hidden;  
+.menu, .header-right {
+    flex: 1;
+}
+
+.menu_icons {
+    width: 35px;
+    cursor: pointer;
+    justify-content: flex-start;
+}
+
+.menu nav ul {
+    list-style: none; /* Supprime les puces */
+    display: flex; /* Affiche les éléments de liste en ligne */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+}
+
+.menu nav ul li {
+    flex: 0 0 auto; /* Empêche les éléments de liste de s'étirer */
+    margin-right: 45px; /* Ajustez cette valeur pour espacer les éléments de menu */
+}
+
+.menu nav ul li:last-child {
+    margin-right: 0; /* Supprime la marge du dernier élément pour un alignement propre */
+}
+
+.menu nav ul li a {
+    text-decoration: none; /* Optionnel : supprime le soulignement des liens */
+    color: inherit; /* Optionnel : utilise la couleur de texte héritée */
+    font-size: 25px;
+}
+
+body{ 
     display: flex;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
+
+.Bienvenue {
+    margin-bottom: 50px; /* Augmentez cet espace selon vos besoins */
+    font-size: 30px; /* Taille de la police pour le texte de bienvenue */
+}
+
+.Bienvenue h1 {
+    font-size: 40px; /* Taille de la police plus grande pour le titre */
+    margin-bottom: 15px; /* Espace entre le titre et le paragraphe suivant */
+}
+
+.Bienvenue p {
+    font-size: 20px; /* Taille de la police pour le paragraphe */
 }
 
 .galerie {
     display: flex;
     width: auto;
-    animation: LesPhotos 30s linear infinite;
-    margin: 0;
+    margin-top: 400px;
     padding: 0;
 }
 
 .galerie div {
-    width: 300px;   
-    flex:0 0 auto; 
-    border: 2px solid #000000; 
+    width: 300px; /* Taille moyenne pour un carré */    
+    flex:0 0 auto; /* Empêche les éléments de s'étirer ou de se contracter */
+    border: 5px solid #000000; /* Bordure pour chaque image */
+    animation: LesPhotos 40s linear infinite;
 }
 
 .galerie img {
-    width: 100%; 
-    height: auto; 
+    width: 100%; /* Assure que l'image remplit son conteneur */
+    height: auto; /* Maintient le ratio de l'image */
     display: block; 
+
 }
 
 @keyframes LesPhotos {
@@ -96,16 +123,79 @@ body{
     }
 }
 
-h1{
-    
-    padding-left: 550px;   
-    padding-bottom: 250px;
-    white-space: nowrap;
+.tarif img{
+    width: 39.65px; /* Largeur approximative pour une taille A4 */
+    height: 56.1px; /* Hauteur approximative pour une taille A4 */
+    display: block; /* Assure que l'image est affichée en bloc */
+    margin: 20px auto; 
 }
-main{
-    background-color: skyblue;
-    border-radius: 10px/ 10px;
-    
-    width: 40px;
-    
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrage vertical */
+    align-items: center; /* Centrage horizontal */
+}
+
+.titre-principal {
+    font-size: 100px; /* Taille du texte */
+    text-align: center; /* Centrage horizontal du texte */
+    margin-top: -180px; /* Espace au-dessus du titre */
+    margin-bottom: 0px; /* Espace en dessous du titre */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20%;
+    font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+}
+.presentation {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20spx; /* Ajuste la marge verticale */
+    margin-bottom: 50px;
+    padding: 0 20px; /* Ajoute un peu d'espace horizontal */
+    font-family: 'League Spartan', sans-serif;
+    display: block; /* Utilisez block si vous ne voulez pas utiliser flex ou grid */
+    max-width: 1000px; /* Ajuste la largeur maximale pour contrôler le wrapping du texte */
+    margin-left : 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items : center;
+}
+
+
+.réserver a, .réserver span {
+    display: inline-block; /* Permet d'appliquer la marge et le padding */
+    padding: 10px 20px; /* Ajustez l'espace autour du texte à l'intérieur du bouton */
+    margin: 5px 0; /* Ajustez l'espace autour du bouton */
+    background-color: #000; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    border: 2px solid #fff; /* Ajoute un cadre autour du bouton */
+    border-radius: 5px; /* Les coins arrondis du bouton */
+    transition: background-color 0.3s, color 0.3s; /* Transition douce pour les effets au survol */
+}
+
+.réserver a:hover, .réserver span:hover {
+    background-color: #fff; /* Couleur de fond au survol */
+    color: #000; /* Couleur de texte au survol */
+    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
+}
+
+/* Personnaliser la barre de défilement pour les navigateurs WebKit */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Couleur de l'arrière-plan de la piste */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffd700; /* Couleur de la barre de défilement */
+    border-radius: 10px; /* Coins arrondis de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #474747; /* Couleur de la barre de défilement au survol */
 }
