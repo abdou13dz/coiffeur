@@ -46,8 +46,8 @@ header {
 .menu a{
     display: block;
     margin: 0.5em;               /* Marges externes (1 valeurs = 4 directions) */
-    padding: 5px 0px;  
-    width: 80px;          /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    padding: 5px 0px;             /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/               
+    width: 80px;         
     text-align: center;
     background-color: #a1beb9;    /* Couleur d'arrière-plan */
     color: #000000;                  /* Couleur du texte */
