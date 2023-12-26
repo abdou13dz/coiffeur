@@ -12,7 +12,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
+    background-color: rgb(171, 175, 175);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,6 +36,25 @@ header {
 .menu {
     display: flex;
     align-items: center;
+
+   
+}
+.menu li{
+    padding-left: 45px;
+    list-style-type: none;
+}
+.menu a{
+    display: block;
+    margin: 0.5em;               /* Marges externes (1 valeurs = 4 directions) */
+    padding: 5px 0px;  
+    width: 80px;          /* Marges internes (2 valeurs = haut/bas et gauche/droite)*/
+    text-align: center;
+    background-color: #a1beb9;    /* Couleur d'arrière-plan */
+    color: #000000;                  /* Couleur du texte */
+    text-decoration: none;        /* Suppression du soulignement */
+    border: 1px solid #fff;       /* Ajout d'une bordure */
+    border-radius: 4px
+    
 }
 
 body{
@@ -75,4 +94,18 @@ body{
     100%{
         transform:  translateX(-3000px);
     }
+}
+
+h1{
+    
+    padding-left: 550px;   
+    padding-bottom: 250px;
+    white-space: nowrap;
+}
+main{
+    background-color: skyblue;
+    border-radius: 10px/ 10px;
+    
+    width: 40px;
+    
 }
