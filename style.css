@@ -159,21 +159,99 @@ main {
     color: #000; /* Couleur de texte au survol */
     cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
 }
+
 .photo{
-    width: 20%;
-    padding-left: 50px;
-    margin-right: 50px;
+  width: 20%;
+  padding-left: 50px;
+  margin-right: 50px;
+  box-sizing: border-box;
+  border: 5px solid #D2A932;
 }
-h3{
-    padding-right: 60%;
+
+
+
+
+
+
+.conteneur-flex {
+  display: flex;
+  justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
+  align-items: center; /* Alignement vertical */
+  margin: 100px; /* Ajustez la marge selon le besoin */
+}
+.tarif {
+  margin: auto;  /* Marge de 20px en haut et en bas */
+}
+
+.tarif img {
+  width: 400px; /* Largeur de l'image */
+ /* Hauteur de l'image */
+  display: block; /* Assure que l'image est affichée en bloc */
+}
+
+.localisation {
+  /* Styles pour la section de localisation */
+  margin-left: 100px; /* Espace entre la tarification et la localisation */
+}
+
+.localisation h3{
+  font-size: 36px;
+  margin-bottom: 5px;
+    padding-right: 10%;
     padding-top: 50px;
     font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
-    white-space: nowrap; /* Empêche le retour à la ligne */
 }
-.ou{
+.localisation .ou{
+    margin-bottom: 15px;
     padding-right: 50%;
-    font-size: 20px;
+    font-size: 30px;
     font-family: 'League Spartan', sans-serif;
 }
 
+.localisation iframe {
+      width: 500px;
+      height: 400px;
+      border: 0px solid; 
+}
 
+
+
+
+
+.conteneur-flex2 {
+  display: flex;
+  justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
+  align-items: flex-start; /* Alignement vertical au début pour gérer le contenu de différentes hauteurs */
+  margin: 100px; /* Ajustez la marge selon le besoin */
+}
+
+.presentation img {
+  width: 400px; /* Largeur de l'image, ajustez selon vos besoins */
+  display: block; /* Assure que l'image est affichée en bloc */
+  margin-bottom: 20px; /* Espace sous l'image, ajustez selon vos besoins */
+  border: 5px solid #000000;
+}
+
+.Bio {
+  margin-left: 100px; /* Espace entre la présentation et la bio */
+}
+
+.Bio h3 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  /* Supprimez padding-right si ce n'est pas nécessaire ou ajustez-le pour les écrans plus petits */
+  padding-top: 50px; /* Espace au-dessus du titre, ajustez selon vos besoins */
+  font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+}
+
+.Bio p {
+  font-size: 22px; /* Taille de la police pour le paragraphe, ajustez selon vos besoins */
+  margin-bottom: 22px; /* Espace sous le paragraphe, ajustez selon vos besoins */
+}
+
+.celebrité img {
+  width: auto; /* Garde le ratio d'aspect des images */
+  height: 220px; /* Hauteur fixe pour toutes les images, ajustez selon vos besoins */
+  margin-right: 10px; /* Espace à droite de chaque image, ajustez selon vos besoins */
+  border: 5px solid #000000;
+}
