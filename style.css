@@ -30,6 +30,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 150px;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -102,44 +103,7 @@ body{
     font-size: 30px; /* Taille de la police pour le texte de bienvenue */
 }
 
-.Bienvenue h1 {
-    font-size: 40px; /* Taille de la police plus grande pour le titre */
-    margin-bottom: 15px; /* Espace entre le titre et le paragraphe suivant */
-}
 
-.Bienvenue p {
-    font-size: 20px; /* Taille de la police pour le paragraphe */
-}
-
-.galerie {
-    display: flex;
-    width: auto;
-    margin-top: 400px;
-    padding: 0;
-}
-
-.galerie div {
-    width: 300px; /* Taille moyenne pour un carré */    
-    flex:0 0 auto; /* Empêche les éléments de s'étirer ou de se contracter */
-    border: 5px solid #000000; /* Bordure pour chaque image */
-    animation: LesPhotos 40s linear infinite;
-}
-
-.galerie img {
-    width: 100%; /* Assure que l'image remplit son conteneur */
-    height: auto; /* Maintient le ratio de l'image */
-    display: block; 
-
-}
-
-@keyframes LesPhotos {
-    0%{
-        transform:  translateX(0);
-    }
-    100%{
-        transform:  translateX(-3000px);
-    }
-}
 
 
 main {
@@ -147,12 +111,13 @@ main {
     flex-direction: column;
     justify-content: center; /* Centrage vertical */
     align-items: center; /* Centrage horizontal */
+   
 }
 
 .titre-principal {
     font-size: 100px; /* Taille du texte */
     text-align: center; /* Centrage horizontal du texte */
-    margin-top: -180px; /* Espace au-dessus du titre */
+    margin-top: 180px; /* Espace au-dessus du titre */
     margin-bottom: 0px; /* Espace en dessous du titre */
     margin-left: auto;
     margin-right: auto;
@@ -173,6 +138,7 @@ main {
     margin-right: 10px;
     justify-content: center;
     align-items : center;
+    
 }
 
 
@@ -193,124 +159,21 @@ main {
     color: #000; /* Couleur de texte au survol */
     cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
 }
-
-.tarif {
-    width: 39.65px; /* Largeur approximative pour une taille A4 */
-    height: 56.1px; /* Hauteur approximative pour une taille A4 */
-    display: block; /* Assure que l'image est affichée en bloc */
-    margin: 20px auto; 
+.photo{
+    width: 20%;
+    padding-left: 50px;
+    margin-right: 50px;
 }
-
-iframe {
-    width: 100%;
-    height: 400px; /* ou la hauteur souhaitée */
-    border: none; /* pour enlever la bordure */
+h3{
+    padding-right: 60%;
+    padding-top: 50px;
+    font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+    white-space: nowrap; /* Empêche le retour à la ligne */
 }
-
-.profile-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 20px;
-  }
-  
-  .profile-text {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.ou{
+    padding-right: 50%;
+    font-size: 20px;
     font-family: 'League Spartan', sans-serif;
-  }
-  
-  .profile-image {
-    width: 100%;
-    display: block;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .card {
-    max-width: 300px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card img {
-    width: 100%;
-    display: block;
-  }
-  
-  .card h2 {
-    color: #333;
-    text-align: center;
-  }
-  
-  .content {
-    background-color: #f2f2f2;
-    padding: 15px;
-    position: relative;
-  }
-  
-  .more-info {
-    background-color: #ddd;
-    padding: 10px;
-    display: inline-block;
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .more-info:hover {
-    background-color: #ccc;
-  }
-  .social-media-section {
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .tiktok-video {
-    margin-bottom: 20px;
-  }
-  
-  .tiktok-video iframe {
-    width: 100%;
-    max-width: 500px; /* Adjust the size as needed */
-    border: none;
-  }
-  
-  .follow-us {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  .arrows span {
-    font-size: 2em;
-    margin: 0 10px;
-  }
-  
-  .social-icons {
-    display: inline-block;
-    margin-top: 20px;
-  }
-  
-  .social-icons a {
-    margin: 0 10px;
-  }
-  
-  .social-icons img {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-  }
+}
+
+
