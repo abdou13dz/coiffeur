@@ -15,7 +15,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #474747; /* Couleur de la barre de défilement au survol */
+    background: #0056b3; /* Couleur de la barre de défilement au survol */
 }
 
 * {
@@ -30,7 +30,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 130px;
     background-color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -193,13 +193,13 @@ main {
 
 
 .conteneur-flex {
-  background-color:#C6CBCF; /* Couleur de fond */
+  background-color:	#D9D9E0; /* Couleur de fond */
   display: flex;
   justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
   align-items: center; /* Alignement vertical */
   margin: 100px; /* Enlève la marge latérale et centre le conteneur */
   padding: 20px; /* Ajoute un peu d'espace autour du contenu */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+  box-shadow: 0 4px 8px #D2A932; /* Ombre subtile pour un effet de profondeur */
   border-radius: 10px; /* Coins arrondis pour un look moderne */
   width: 100%; /* S'étend sur toute la largeur */
   box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
@@ -222,16 +222,23 @@ main {
 
 .localisation h3{
   font-size: 36px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
     padding-right: 10%;
     padding-top: 50px;
     font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+    text-align: center;
 }
 .localisation .ou{
     margin-bottom: 15px;
     padding-right: 50%;
     font-size: 30px;
     font-family: 'League Spartan', sans-serif;
+}
+
+.ou iframe{
+    width:500px;
+     height:400px;
+     border: 5px solid black;
 }
 
 .localisation iframe {
@@ -248,7 +255,8 @@ main {
   display: flex;
   justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
   align-items: flex-start; /* Alignement vertical au début pour gérer le contenu de différentes hauteurs */
-  margin: 40px; /* Ajustez la marge selon le besoin */
+  margin: 70px; /* Ajustez la marge selon le besoin */
+  margin-top: 20px;
 }
 
 .presentation img {
@@ -281,7 +289,7 @@ main {
   height: 270px; /* Hauteur fixe pour toutes les images, ajustez selon vos besoins */
   margin-right: 30px; /* Espace à droite de chaque image, ajustez selon vos besoins */
   border: 5px solid #000000;
-  border-radius: 10px;
+  border-radius: 10px;  
 }
 .Bio h3, .Bio p {
   margin-left: 150px; /* Ajustez cette valeur selon vos besoins */
@@ -317,9 +325,8 @@ main {
 .text-content {
   /* Assurez-vous que le padding-top est défini sur 0 pour que le fond commence juste au-dessus du contenu textuel et non du titre */
   padding: 0 20px 20px 20px; /* Supprimez le padding en haut si nécessaire */
-  background-color: #dadada; /* Appliquez le fond ici */
-  box-shadow: 0 4px 8px #CCC;
-  border-radius: 0px; /* Ajustez ou supprimez le border-radius si vous ne souhaitez pas d'arrondis */
+  background-color: #D9D9E0; /* Appliquez le fond ici */
+  border-radius: 10px; /* Ajustez ou supprimez le border-radius si vous ne souhaitez pas d'arrondis */
   box-sizing: border-box;
 }
 
@@ -345,6 +352,7 @@ main {
   border-radius: 5px;
   font-weight: bold;
   font-size: 20px;
+  transition: background-color 0.3s
 }
 
 .bouton-en-savoir-plus:hover {
@@ -388,4 +396,69 @@ main {
 .insta {
   width: 300px; /* Largeur fixe pour Instagram */
   height: auto; /* Hauteur automatique pour conserver le ratio */
+}
+
+
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #D9D9E0; /* Appliquez le fond ici */
+  border-color: #000;
+  border-radius: 10px; 
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #D2A932;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: #D2A932;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #0056b3;
 }
