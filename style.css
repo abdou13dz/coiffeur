@@ -161,24 +161,6 @@ main {
 }
 
 
-.réserver a, .réserver span {
-    display: inline-block; /* Permet d'appliquer la marge et le padding */
-    padding: 10px 20px; /* Ajustez l'espace autour du texte à l'intérieur du bouton */
-    margin: 5px 0; /* Ajustez l'espace autour du bouton */
-    background-color: #000; /* Couleur de fond du bouton */
-    color: #fff; /* Couleur du texte du bouton */
-    text-decoration: none; /* Supprime le soulignement par défaut des liens */
-    border: 2px solid #fff; /* Ajoute un cadre autour du bouton */
-    border-radius: 5px; /* Les coins arrondis du bouton */
-    transition: background-color 0.3s, color 0.3s; /* Transition douce pour les effets au survol */
-}
-
-.réserver a:hover, .réserver span:hover {
-    background-color: #fff; /* Couleur de fond au survol */
-    color: #000; /* Couleur de texte au survol */
-    cursor: pointer; /* Change le curseur pour indiquer qu'il est cliquable */
-}
-
 .photo{
   width: 20%;
   padding-left: 50px;
