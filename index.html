@@ -2,14 +2,15 @@
 <html lang="fr">
 <head>
     <title>Djegra Barber</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="coiffeur.css">
+    <link rel="icon" href="/favicon Djegra.png" type="image/svg+xml">
     <meta charset="utf-8">
 </head>
 
 <body>
     <header class="Bienvenue">
         
-            <img src="img/Logo-Djegra-Barber.svg" class="logo" alt="Logo Djegra Barber">
+            <img src="/Logo-Djegra-Barber-le-vrai.svg" class="logo" alt="Logo Djegra Barber">
 
             <div class="menu">  
                 <nav>
@@ -33,19 +34,19 @@
 <main>
     <h1 class="titre-principal">DJEGRA BARBER</h1>
     <div class="presentation">
-        Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées. Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité.
+        Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées.<br> Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité.
     </div>
 
      <div>
-        <img src="img/1.jpg" alt="Texte de l’infobulle" class="photo">
-        <img src="img/2.jpg" alt="Texte de l’infobulle" class="photo">
-        <img src="img/3.jpg" alt="Texte de l’infobulle" class="photo">
-        <img src="img/10.jpg" alt="Texte de l’infobulle" class="photo">
+        <img src="/1.jpg" alt="Texte de l’infobulle" class="photo">
+        <img src="/2.jpg" alt="Texte de l’infobulle" class="photo">
+        <img src="/3.jpg" alt="Texte de l’infobulle" class="photo">
+        <img src="/10.jpg" alt="Texte de l’infobulle" class="photo">
      </div>
 
 <div class="conteneur-flex">
   <div class="tarif" id="tarif-ancr">
-      <img src="img/Tarif.jpg"  alt="Tarif Djegra Barber">
+      <img src="/Tarif.png"  alt="Tarif Djegra Barber">
   </div>
 
 <section class="localisation" id="localisation">
@@ -58,16 +59,16 @@
 
 <div class="conteneur-flex2">
   <div class="presentation">
-      <img src="img/2.bio.jpg"  alt="photo1">
+      <img src="/2.bio.jpg"  alt="photo1">
   </div>
 
 <section class="Bio" id="bio">
       <div><h3>À propos</h3>
-        <p>Djebril Elhamri, âgé de 25 ans, est un coiffeur talentueux exerçant depuis 2019. Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles, à seulement 15 minutes d'Aix-en-Provence.</p>
+        <p>Djebril Elhamri, âgé de 25 ans, est un coiffeur talentueux exerçant depuis 2019. <br>Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles,<br> à seulement 15 minutes d'Aix-en-Provence.</p>
       </div>
      <div class="celebrité">
-     <img src="img/1.bio.jpg"  alt="photo2">
-     <img src="img/3.bio.jpg"  alt="photo2">
+     <img src="/1.bio.jpg"  alt="photo2">
+     <img src="/3.bio.jpg"  alt="photo2">
     </div>
 </div>
 
@@ -80,7 +81,7 @@
             <a href="https://eternelparis.com/blogs/cheveux-coiffure-homme/coupe-homme-court" class="bouton-en-savoir-plus">En savoir plus</a>
         </div>
         <div class="buzzcut">
-            <img src="img/7.jpg" alt="photo2">
+            <img src="/7.jpg" alt="photo2">
         </div>
     </div>
 </section>
@@ -101,7 +102,7 @@
         <div class="reseau">
             <h3>Instagram</h3>
             <a href="https://www.instagram.com/djegra_barber/" target="_blank">
-                <img class="insta" src="img/IMG_8515.JPG" alt="Instagram">
+                <img class="insta" src="/IMG_8515.JPG" alt="Instagram">
             </a>
         </div>
     
@@ -144,8 +145,18 @@
               
 </section>
 
-        
-
+<button onclick="changeStyle()">Changer de Style</button>       
+<script>
+    function changeStyle() {
+        var stylesheet = document.getElementById('styleSheet');
+        if (stylesheet.href.includes("coiffeur.css")) {
+            stylesheet.href = 'alternate_style.css';
+        } else {
+            stylesheet.href = 'coiffeur.css';
+        }
+    }
+    </script>
+        <script src="script.js"></script>
 
 </main>      
 </body> 
