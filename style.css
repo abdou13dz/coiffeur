@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Personnaliser la barre de défilement pour les navigateurs WebKit */
 ::-webkit-scrollbar {
     width: 12px; /* Largeur de la barre de défilement */
@@ -117,14 +121,6 @@ body{
     flex-direction: column;
 }
 
-.Bienvenue {
-    margin-bottom: 50px; /* Augmentez cet espace selon vos besoins */
-    font-size: 30px; /* Taille de la police pour le texte de bienvenue */
-}
-
-
-
-
 main {
     display: flex;
     flex-direction: column;
@@ -161,13 +157,38 @@ main {
 }
 
 
-.photo{
-  width: 20%;
-  padding-left: 50px;
-  margin-right: 50px;
+.photo {
+  width: 20%; /* La largeur des photos reste la même */
+  margin-right: 30px; /* Réduit l'espacement à droite de chaque photo */
   box-sizing: border-box;
-  border: 5px solid #D2A932;
+  border: 5px solid #000000;
+  border-radius: 10px;
+  display: block;
+  height: auto;
 }
+
+.galerie{
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.photo {
+  display: inline-flex;
+  animation: scroll 20s linear infinite; /* Réduit le temps de l'animation pour augmenter la vitesse de défilement */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Déplacement nécessaire pour revenir au début de la première image après la dixième image dans la séquence dupliquée */
+    transform: translateX(-220%);
+  }
+}
+
+
 
 
 
