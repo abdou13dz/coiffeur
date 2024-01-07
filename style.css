@@ -1,154 +1,144 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
 
+/* ajoute un effet de fluidité aux défilements */
 html {
   scroll-behavior: smooth;
-}
+} 
 
-/* Personnaliser la barre de défilement pour les navigateurs WebKit */
+/* personnalisation de la barre de défilement pour les navigateurs WebKit */
 ::-webkit-scrollbar {
-    width: 12px; /* Largeur de la barre de défilement */
+    width: 12px;    /* largeur de la barre de défilement */
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Couleur de l'arrière-plan de la piste */
+    background: #f1f1f1;    /* couleur de l'arrière-plan de la barre */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D2A932; /* Couleur de la barre de défilement */
-    border-radius: 10px; /* Coins arrondis de la barre de défilement */
+    background: #D2A932;     /* couleur de la barre de défilement */
+    border-radius: 10px;    /* coins arrondis de la barre de défilement */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0056b3; /* Couleur de la barre de défilement au survol */
+    background: #0056b3;    /* couleur de la barre de défilement au survol */
 }
 
+/* règle pour tout les éléments */
 * {
-    margin: 10;
-    padding: 10;
-    box-sizing: border-box;
-    font-family: 'League Spartan', sans-serif;
+  box-sizing: border-box;    /* assure que la marge intérieur et la bordure sont inclus dans la largeur et la hauteur totale */
+  font-family: 'League Spartan', sans-serif;     /* police personnalisée sur Google Font */
 }
 
+/* Barre de navigation */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 130px;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px 10%;
-    box-shadow: 0 0 20px rgb(0, 0, 0);
-    z-index: 100;
-    padding-top: 0px; /* Ajustez selon vos besoins */
-    align-items: center;
+  position: fixed;     /* la barre de navigation reste fixe en haut de la page */
+  top: 0;    /* positionné tout en haut */
+  left: 0;     /* positionné tout à gauche */
+  width: 100%;    /* prend toute la largeur de l'écran */
+  height: 130px;    /* hauteur fixe du de la barre */
+  background-color: #ffffff;     /* couleur de fond blanche */
+  display: flex;     /* aligne les éléments */
+  justify-content: space-between;    /* espace réparti entre les éléments */
+  align-items: center;    /* centre les éléments verticalement */
+  padding: 2px 10%;
+  box-shadow: 0 0 20px rgb(0, 0, 0);     /* ombre sous le barre*/
+  z-index: 100;     /* permet de faire passer la barre de navigation en premier plan afin que le menu soit toujours présent*/
 }
 
+/* Logo du site */
 .logo {
     width: 200px;
-    align-items: center;
-    display: block;
-    cursor: pointer;
+    display: block;    /* élement en bloc*/
 }
 
+/* Menu */
 .menu {
     display: flex;
-    justify-content: center; /* Centre le menu horizontalement */
-    align-items: center; /* Centre verticalement si nécessaire */
+    justify-content: center;    /* Centre le menu horizontalement */
+    align-items: center; 
 }
 
 .menu, .header-right {
-    flex: 1;
+  flex: 1;    /* prends la même proportion aux éléments l'espace disponible */
 }
 
-.menu_icons {
-    width: 35px;
-    cursor: pointer;
-    justify-content: flex-start;
+.menu ul {
+list-style: none;    /* enlève les points de la liste */
+display: flex;
+padding: 0;
+margin: 0;
 }
 
-.menu nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
+.menu ul li {
+flex: 0 0 auto;  /* empêche les éléments de grandir ou/et de rétrécir */
+margin-right: 45px;
 }
 
-.menu nav ul li {
-  flex: 0 0 auto;
-  margin-right: 45px;
-  position: relative; /* Ajouté pour positionner le pseudo-élément */
+.menu ul li a {
+text-decoration: none;      /* enlève le soulignement des liens */
+color: black;
+font-size: 25px;      /* taille de la police */
+position: relative;     /* positionne les éléments */
 }
 
-.menu nav ul li:last-child {
-  margin-right: 0;
-}
 
-.menu nav ul li a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 25px;
-  position: relative; /* Nécessaire pour le pseudo-élément */
-  overflow: hidden; /* Garde le pseudo-élément à l'intérieur du lien */
-}
-
-.menu nav ul li a::after {
-  content: '';
+.menu ul li a::after {
+  content: '';    /* crée un vide */
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px; /* Épaisseur du soulignement */
-  background-color: black;
-  transform: scaleX(0); /* Démarre sans être visible */
-  transition: transform 0.2s ease-in-out; /* Animation douce */
+  height: 2px;
+  background-color: #D2A932;    /* couleur de fond du soulignement */
+  transform: scaleX(0);     /* cache le soulignement en le mettant invisble */
+  transition: transform 0.2s ease-in-out;     /* animation */
 }
 
-.menu nav ul li a:hover::after {
-  transform: scaleX(1); /* Étend le pseudo-élément sur toute la largeur */
+.menu ul li a:hover::after {
+  transform: scaleX(1);    /* s'étend entièrement à la largeur au survol */
 }
 
-body{ 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 100px;
-    flex-direction: column;
+/* Le corps du site */
+body { 
+  display: flex;    /* utilise flexbox pour le layout */
+  align-items: center;    /* centre les éléments verticalement */
+  justify-content: flex-start;    /* aligne les éléments au début horizontalement */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 100px;   /* marge en bas du body */
+  flex-direction: column;     /* organise les éléments en colonne */
 }
 
+/* Contenue du site */
 main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrage vertical */
-    align-items: center; /* Centrage horizontal */
-   
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Titre*/
 .titre-principal {
-    font-size: 100px; /* Taille du texte */
-    text-align: center; /* Centrage horizontal du texte */
-    margin-top: 180px; /* Espace au-dessus du titre */
-    margin-bottom: 0px; /* Espace en dessous du titre */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20%;
-    font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
-    white-space: nowrap; /* Empêche le retour à la ligne */
+  font-size: 100px;
+  text-align: center;
+  margin-top: 180px; 
+  margin-bottom: 0px;
+  padding: 0 20%;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  white-space: nowrap;    /* empêche le retour à la ligne du titre */
 }
+
+/* Phrase d'accroche */
 .presentation {
     font-size: 20px;
     text-align: center;
-    margin-top: 20spx; /* Ajuste la marge verticale */
+    margin-top: 20spx; 
     margin-bottom: 50px;
-    padding: 0 20px; /* Ajoute un peu d'espace horizontal */
+    padding: 0 20px;
     font-family: 'League Spartan', sans-serif;
-    display: block; /* Utilisez block si vous ne voulez pas utiliser flex ou grid */
-    max-width: 1000px; /* Ajuste la largeur maximale pour contrôler le wrapping du texte */
+    display: block; 
+    max-width: 1000px;
     margin-left : 10px;
     margin-right: 10px;
     justify-content: center;
@@ -156,26 +146,23 @@ main {
     
 }
 
-
+/* Défilement des photos */
 .photo {
-  width: 20%; /* La largeur des photos reste la même */
-  margin-right: 30px; /* Réduit l'espacement à droite de chaque photo */
+  width: 20%;
+  margin-right: 30px;
   box-sizing: border-box;
   border: 5px solid #000000;
   border-radius: 10px;
   display: block;
   height: auto;
+  display: inline-flex;
+  animation: scroll 70s linear infinite;    /* temps de l'animation pour augmenter ou réduire la vitesse du défilement */
 }
 
 .galerie{
-  overflow: hidden;
+  overflow: hidden;     /* permet de masquer le contenue qui déborde notamment en enlevant la barre de scroll horizontalement*/
   white-space: nowrap;
   width: 100%;
-}
-
-.photo {
-  display: inline-flex;
-  animation: scroll 20s linear infinite; /* Réduit le temps de l'animation pour augmenter la vitesse de défilement */
 }
 
 @keyframes scroll {
@@ -183,177 +170,169 @@ main {
     transform: translateX(0);
   }
   100% {
-    /* Déplacement nécessaire pour revenir au début de la première image après la dixième image dans la séquence dupliquée */
-    transform: translateX(-220%);
+    transform: translateX(-1110%);    /* nécessaire pour revenir au début de la première image après la dixième image dans la boucle */
   }
 }
 
-
-
-
-
-
-
-
+/* Grille tarifaire + localisation Google Maps */
 .conteneur-flex {
-  background-color:	#D9D9E0; /* Couleur de fond */
+  background-color:	#D9D9E0;
   display: flex;
-  justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
-  align-items: center; /* Alignement vertical */
-  margin: 100px; /* Enlève la marge latérale et centre le conteneur */
-  padding: 20px; /* Ajoute un peu d'espace autour du contenu */
-  box-shadow: 0 4px 8px #D2A932; /* Ombre subtile pour un effet de profondeur */
-  border-radius: 10px; /* Coins arrondis pour un look moderne */
-  width: 100%; /* S'étend sur toute la largeur */
-  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #D2A932;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
+/* Grille tarifaire */
 .tarif {
-  margin: auto;  /* Marge de 20px en haut et en bas */
+  margin: auto;
 }
 
 .tarif img {
-  width: 400px; /* Largeur de l'image */
- /* Hauteur de l'image */
-  display: block; /* Assure que l'image est affichée en bloc */
+  width: 400px;
+  display: block;
 }
 
+/* Localisation Google Maps*/
 .localisation {
-  /* Styles pour la section de localisation */
-  margin-left: 20px; /* Espace entre la tarification et la localisation */
+  margin-left: 20px;
   margin-right: 100px;
 }
 
 .localisation h3{
   font-size: 36px;
   margin-bottom: 20px;
-    padding-right: 10%;
-    padding-top: 50px;
-    font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
-    text-align: center;
+  padding-right: 10%;
+  padding-top: 50px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  text-align: center;
 }
 .localisation .ou{
-    margin-bottom: 15px;
-    padding-right: 50%;
-    font-size: 30px;
-    font-family: 'League Spartan', sans-serif;
+  margin-bottom: 15px;
+  padding-right: 50%;
+  font-size: 30px;
+  font-family: 'League Spartan', sans-serif;
 }
 
 .ou iframe{
-    width:500px;
-     height:400px;
-     border: 5px solid black;
+  width:500px;
+  height:400px;
+  border: 5px solid black;
 }
 
 .localisation iframe {
-      width: 500px;
-      height: 400px;
-      border: 0px solid; 
+  width: 500px;
+  height: 400px;
 }
 
-
-
-
-
+/* Présentation du coiffeur*/
 .conteneur-flex2 {
   display: flex;
-  justify-content: space-between; /* Répartit l'espace entre les éléments enfants */
-  align-items: flex-start; /* Alignement vertical au début pour gérer le contenu de différentes hauteurs */
-  margin: 70px; /* Ajustez la marge selon le besoin */
+  justify-content: space-between;
+  margin: 70px;
   margin-top: 20px;
 }
 
+/* Photo de dos*/
 .presentation img {
-  width: 400px; /* Largeur de l'image, ajustez selon vos besoins */
-  display: block; /* Assure que l'image est affichée en bloc */
-  margin-bottom: 20px; /* Espace sous l'image, ajustez selon vos besoins */
+  width: 400px;
+  display: block;
+  margin-bottom: 20px;
   border: 5px solid #000000;
   border-radius: 10px;
 }
 
+/* Biographie */
 .Bio {
-  margin-left: -100px; /* Espace entre la présentation et la bio */
+  margin-left: -100px;    /* pixel en négatif pour mettre une image sur l'autre */
   margin-right: 10px;
 }
 
 .Bio h3 {
   font-size: 46px;
   margin-bottom: 5px;
-  padding-top: 50px; /* Espace au-dessus du titre, ajustez selon vos besoins */
-  font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+  padding-top: 50px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
 }
 
 .Bio p {
-  font-size: 20px; /* Taille de la police pour le paragraphe, ajustez selon vos besoins */
-  margin-bottom: 22px; /* Espace sous le paragraphe, ajustez selon vos besoins */
+  font-size: 20px;
+  margin-bottom: 22px;
 }
 
+.Bio h3, .Bio p {
+  margin-left: 150px;
+}
+
+/* Photos avec célebrités*/
 .celebrité img {
-  width: auto; /* Garde le ratio d'aspect des images */
-  height: 270px; /* Hauteur fixe pour toutes les images, ajustez selon vos besoins */
-  margin-right: 30px; /* Espace à droite de chaque image, ajustez selon vos besoins */
+  height: 270px;
+  margin-right: 30px;
   border: 5px solid #000000;
   border-radius: 10px;  
 }
-.Bio h3, .Bio p {
-  margin-left: 150px; /* Ajustez cette valeur selon vos besoins */
 
-}
-
+/* Blog*/
 .blog {
-  margin-left: 100px; /* Espace entre la présentation et la bio */
+  margin-left: 100px;
   margin-right: 10px;
 }
 
 .blog h3 {
   font-size: 46px;
   margin-bottom: 5px;
-  padding-top: 50px; /* Espace au-dessus du titre, ajustez selon vos besoins */
-  font-family: 'Rubik Doodle Shadow', sans-serif; /* Police de caractères */
+  padding-top: 50px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
 }
 
 .blog h1 {
   font-size: 42px;
   margin-bottom: 5px;
-  padding-top: 5px; /* Espace au-dessus du titre, ajustez selon vos besoins */
-  font-family: 'League Spartan', sans-serif; /* Police de caractères */
+  padding-top: 5px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.blog p {
+  font-size: 26px;
+  margin-bottom: 22px;
 }
 
 .content-container {
   margin-bottom: 50px;
   display: flex;
-  align-items: center; /* Alignez verticalement */
-  justify-content: space-between ; /* Espace entre le texte et l'image */
+  align-items: center;
+  justify-content: space-between ;
 }
 
 .text-content {
-  /* Assurez-vous que le padding-top est défini sur 0 pour que le fond commence juste au-dessus du contenu textuel et non du titre */
-  padding: 0 20px 20px 20px; /* Supprimez le padding en haut si nécessaire */
-  background-color: #D9D9E0; /* Appliquez le fond ici */
-  border-radius: 10px; /* Ajustez ou supprimez le border-radius si vous ne souhaitez pas d'arrondis */
+  padding: 0 20px 20px 20px;
+  background-color: #D9D9E0;
+  border-radius: 10px;
   box-sizing: border-box;
 }
 
-
+/* Photo Buzzcut*/
 .buzzcut img {
   width: 500px;
   border: 5px solid #000000;
   margin-left: 30px;
   border-radius: 10px;
-  /* Retirez float et margin-left si utilisés précédemment */
 }
 
-.blog p {
-  font-size: 26px; /* Taille de la police pour le paragraphe, ajustez selon vos besoins */
-  margin-bottom: 22px; /* Espace sous le paragraphe, ajustez selon vos besoins */
-}
+/* Bouton en savoir plus qui mène sur une autre page*/
 .bouton-en-savoir-plus {
   display: inline-block;
   padding: 10px 150px;
   background-color: #D2A932;
   color: white;
-  text-decoration: none;
+  text-decoration: none;    /* enlève le souligne sur le bouton */
   border-radius: 5px;
-  font-weight: bold;
+  font-weight: bold;    /* met le texte en gras */
   font-size: 20px;
   transition: background-color 0.3s
 }
@@ -362,10 +341,11 @@ main {
   background-color: #0056b3;
 }
 
+/* Les réseaux sociaux */
 .social-media-callout h2 {
-  font-size: 36px; /* Réduit la taille du texte */
-  margin-bottom: 10px; /* Espace entre le titre et les icônes */
-  padding-top: 20px; /* Réduit l'espace au-dessus du titre */
+  font-size: 36px;
+  margin-bottom: 10px;    /* Espace entre le titre et les réseaux */
+  padding-top: 20px;
   font-family: 'Rubik Doodle Shadow', sans-serif;
   text-align: center;
   color: #000000;
@@ -374,11 +354,11 @@ main {
 .reseaux-sociaux {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Aligner les enfants en haut */
-  height: auto; /* Hauteur automatique ou spécifiez une hauteur pour forcer l'alignement */
+  align-items: flex-start;
+  height: auto;
   padding: 30px 0;
-  gap: 65px;
-  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+  gap: 100px;    /* espace entre les réseaux sociaux */
+  flex-wrap: wrap;    /* Permet aux éléments de passer à la ligne suivante si nécessaire */
 }
 
 .reseau {
@@ -386,32 +366,32 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-top: 0; /* Assure que le haut de chaque .reseau est aligné avec les autres */
+  margin-top: 0;
 }
 
-/* Styles supplémentaires pour snapchat-embed, insta et video-tiktok si nécessaire */
-
+/* Réseau Snapchat */
 .snapchat-embed {
-  border-radius: 40px; /* Si vous souhaitez ajouter un style directement ici */
-  /* Définissez la largeur et la hauteur maximales si nécessaire */
+  border-radius: 40px;
 }
 
+/* Réseau Instagram */
 .insta {
-  width: 300px; /* Largeur fixe pour Instagram */
-  height: auto; /* Hauteur automatique pour conserver le ratio */
+  width: 300px;
+  height: auto;
 }
 
-
+/* Formulaire*/
 .form-container {
   padding: 20px;
   max-width: 500px;
   margin: 20px auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  background-color: #D9D9E0; /* Appliquez le fond ici */
+  background-color: #D9D9E0;
   border-color: #000;
   border-radius: 10px; 
 }
 
+/* Nom + Prénom + E-mail + Zone de texte*/
 .form-group {
   margin-bottom: 15px;
 }
@@ -434,13 +414,13 @@ main {
   height: 100px;
 }
 
+/* Changez de style*/
 button {
   background-color: #D2A932;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   transition: background-color 0.3s
 }
 
@@ -448,6 +428,7 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Ancrage qui remonte vers le haut*/
 .back-to-top {
   position: fixed;
   right: 20px;
