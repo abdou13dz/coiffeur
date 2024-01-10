@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <title>Djegra Barber</title>
-    <link rel="stylesheet" href="coiffeur.css">
+    <link id="styleSheet" rel="stylesheet" type="text/css" href="coiffeur.css">
+    <meta name="description" content="bla bla" />
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon Djegra.png" type="image/svg+xml">
@@ -10,26 +11,44 @@
 </head>
 
 <body>
-        <header>
-            <a href="#">
-                <img src="/Logo-Djegra-Barber-le-vrai.svg" class="logo" alt="Logo Djegra Barber">
-            </a>
-            
-                <!-- Menu de navigation -->
-                <nav class="menu"> 
-                    <nav>
-                        <ul>
-                            <li><a href="#">Accueil</a></li>
-                            <li><a href="#tarif-ancr">Tarifs</a></li>
-                            <li><a href="https://www.google.com/maps/place/Djegra+Barber/@43.5222167,5.3803196,13z/data=!4m14!1m7!3m6!1s0x12c9f3e7fdfcaf2d:0xf7ff48690b8566cd!2sDjegra+Barber!8m2!3d43.5144636!4d5.3641572!16s%2Fg%2F11kj96lbsj!3m5!1s0x12c9f3e7fdfcaf2d:0xf7ff48690b8566cd!8m2!3d43.5144636!4d5.3641572!16s%2Fg%2F11kj96lbsj!5m1!1e2?entry=ttu" target="_blank">Accès</a></li>
-                            <li><a href="#presentation">Coiffeur</a></li>
-                            <li><a href="#blog">Idées</a></li>
-                            <li><a href="#reseau">Réseaux</a></li>
-                            <li><a href="#avis">Avis</a></li>
-                            <a href="#" class="back-to-top">Haut de page</a>
-                        </ul>
-                    </nav>   
-        </header>
+    <header>
+        <a href="#">
+            <img src="/Logo-Djegra-Barber-le-vrai.svg" class="logo" alt="Logo Djegra Barber">
+        </a>
+        
+        <!-- Menu de navigation -->
+        <nav class="menu"> 
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#tarif-ancr">Tarifs</a></li>
+                <li><a href="https://maps.app.goo.gl/uLJPkfnhcENyx9BHA" target="_blank">Accès</a></li>
+                <li><a href="#presentation">Coiffeur</a></li>
+                <li><a href="#blog">Idées</a></li>
+                <li><a href="#reseau">Réseaux</a></li>
+                <li><a href="#avis">Retour</a></li>
+                <!-- Ajout du bouton Changer de Style -->
+                <li class="style-button">
+                    <button onclick="changeStyle()">Changer de Thème</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Autres contenus de la page -->
+    <script>
+        function changeStyle() {
+            var stylesheet = document.getElementById('styleSheet');
+            var image = document.querySelector('.tarif img'); // Assurez-vous que le sélecteur correspond à votre image
+
+            if (stylesheet.href.includes("coiffeur.css")) {
+                stylesheet.href = 'alternate_style.css'; // Le chemin vers votre autre feuille de style
+                image.src = '/Tarif-noir.png'; // Le chemin vers votre nouvelle image
+            } else {
+                stylesheet.href = 'coiffeur.css'; // Le chemin de retour vers la feuille de style originale
+                image.src = '/Tarif.png'; // Le chemin de retour vers l'image originale
+            }
+        }
+    </script>
 
 
     <!-- Titre et phrase d'accroche -->
@@ -71,11 +90,11 @@
             <div class="tarif" id="tarif-ancr">
                 <img src="/Tarif.png"  alt="Tarif Djegra Barber">
             </div>
-
+            
             <div class="localisation"id="localisation">
                 <h3>Où nous trouver ?</h3>
                 <div class="ou">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.674262914714!2d5.3641572!3d43.5144636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9f3e7fdfcaf2d%3A0xf7ff48690b8566cd!2sDjegra%20Barber!5e0!3m2!1sfr!2sfr!4v1703729764266!5m2!1sfr!2sfr" width="500" height="400" style="border: 4px solid black;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.674262914714!2d5.3641572!3d43.5144636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9f3e7fdfcaf2d%3A0xf7ff48690b8566cd!2sDjegra%20Barber!5e0!3m2!1sfr!2sfr!4v1703729764266!5m2!1sfr!2sfr" ; allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div> 
             </div>  
         </section>
@@ -151,7 +170,7 @@
             <h3>Laissez nous un avis</h3>
 
             <!-- L'adresse mail du récepteur -->
-            <form action="mailto:ayrtonsebaa@gmail.com" method="post" enctype="text/plain">
+            <form action="mailto:dejgrabarber@gmail.com" method="post" enctype="text/plain">
 
                 <!-- Nom -->
                 <div class="form-group">
@@ -184,19 +203,7 @@
 
                 
         </section>
-
-        <button onclick="changeStyle()">Changer de Style</button>       
-        <script>
-            function changeStyle() {
-                var stylesheet = document.getElementById('styleSheet');
-                if (stylesheet.href.includes("coiffeur.css")) {
-                    stylesheet.href = 'alternate_style.css';
-                } else {
-                    stylesheet.href = 'coiffeur.css';
-                }
-            }
-            </script>
-                <script src="script.js"></script>
+        <a href="#" class="back-to-top">Haut de page</a>
 
     </main>      
 </body> 
