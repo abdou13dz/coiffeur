@@ -1,205 +1,453 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <title>Djegra Barber</title>
-    <link id="styleSheet" rel="stylesheet" type="text/css" href="coiffeur.css">s
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon Djegra.png" type="image/svg+xml">
-    <meta charset="utf-8">
-</head>
+/* ajoute un effet de fluidité aux défilements */
+html {
+  scroll-behavior: smooth;
+} 
 
-<body>
-    <header>
-        <a href="#">
-            <img src="/Logo-Djegra-Barber-le-vrai.svg" class="logo" alt="Logo Djegra Barber">
-        </a>
-        
-        <!-- Menu de navigation -->
-        <nav class="menu"> 
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#tarif-ancr">Tarifs</a></li>
-                <li><a href="https://www.google.com/maps..." target="_blank">Accès</a></li>
-                <li><a href="#presentation">Coiffeur</a></li>
-                <li><a href="#blog">Idées</a></li>
-                <li><a href="#reseau">Réseaux</a></li>
-                <li><a href="#avis">Avis</a></li>
-                <!-- Ajout du bouton Changer de Style -->
-                <li class="style-button">
-                    <button onclick="changeStyle()">Changer de Thème</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+/* personnalisation de la barre de défilement pour les navigateurs WebKit */
+::-webkit-scrollbar {
+    width: 12px;    /* largeur de la barre de défilement */
+}
 
-    <!-- Autres contenus de la page -->
-    <script>
-        function changeStyle() {
-            var stylesheet = document.getElementById('styleSheet');
-            if (stylesheet.href.includes("coiffeur.css")) {
-                stylesheet.href = 'alternate_style.css';
-            } else {
-                stylesheet.href = 'coiffeur.css';
-            }
-        }
-    </script>
+::-webkit-scrollbar-track {
+    background: #f1f1f1;    /* couleur de l'arrière-plan de la barre */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D2A932;     /* couleur de la barre de défilement */
+    border-radius: 10px;    /* coins arrondis de la barre de défilement */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;    /* couleur de la barre de défilement au survol */
+}
+
+/* règle pour tout les éléments */
+* {
+  box-sizing: border-box;    /* assure que la marge intérieur et la bordure sont inclus dans la largeur et la hauteur totale */
+  font-family: 'League Spartan', sans-serif;     /* police personnalisée sur Google Font */
+}
+
+/* Barre de navigation */
+header {
+  position: fixed;     /* la barre de navigation reste fixe en haut de la page */
+  top: 0;    /* positionné tout en haut */
+  left: 0;     /* positionné tout à gauche */
+  width: 100%;    /* prend toute la largeur de l'écran */
+  height: 130px;    /* hauteur fixe du de la barre */
+  background-color: #ffffff;     /* couleur de fond blanche */
+  display: flex;     /* aligne les éléments */
+  justify-content: space-between;    /* espace réparti entre les éléments */
+  align-items: center;    /* centre les éléments verticalement */
+  padding: 2px 10%;
+  box-shadow: 0 0 20px rgb(0, 0, 0);     /* ombre sous le barre*/
+  z-index: 100;     /* permet de faire passer la barre de navigation en premier plan afin que le menu soit toujours présent*/
+}
+
+/* Logo du site */
+.logo {
+    width: 200px;
+    display: block;    /* élement en bloc*/
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    justify-content: center;    /* Centre le menu horizontalement */
+    align-items: center; 
+}
+
+.menu, .header-right {
+  flex: 1;    /* prends la même proportion aux éléments l'espace disponible */
+}
+
+.menu ul {
+list-style: none;    /* enlève les points de la liste */
+align-items: center;
+display: flex;
+padding: 0;
+margin: 0;
+}
+
+.menu ul li {
+flex: 0 0 auto;  /* empêche les éléments de grandir ou/et de rétrécir */
+margin-right: 45px;
+}
+
+.menu ul li a {
+text-decoration: none;      /* enlève le soulignement des liens */
+color: black;
+font-size: 25px;      /* taille de la police */
+position: relative;     /* positionne les éléments */
+}
 
 
-    <!-- Titre et phrase d'accroche -->
-    <main>
-        <h1 class="titre-principal">DJEGRA BARBER</h1>
-        <section class="presentation">
-            Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées.<br> Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité.
-        </section>
+.menu ul li a::after {
+  content: '';    /* crée un vide */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #D2A932;    /* couleur de fond du soulignement */
+  transform: scaleX(0);     /* cache le soulignement en le mettant invisble */
+  transition: transform 0.2s ease-in-out;     /* animation */
+}
 
-        <!-- Défilement des photos -->
-        <section class="galerie">
-            <div class="défilé">
-                <img src="/1.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/2.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/3.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/4.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/5.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/6.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/7.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/8.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/9.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/10.jpg" alt="Texte de l’infobulle" class="photo">
-                <!-- Duplication des images pour simuler une boucle -->
-                <img src="/1.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/2.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/3.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/4.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/5.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/6.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/7.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/8.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/9.jpg" alt="Texte de l’infobulle" class="photo">
-                <img src="/10.jpg" alt="Texte de l’infobulle" class="photo">
-            </div>
-        </section>
+.menu ul li a:hover::after {
+  transform: scaleX(1);    /* s'étend entièrement à la largeur au survol */
+}
 
-        <!-- Grille tarifaire + localisation Google Maps -->
-        <section class="conteneur-flex">
-            <div class="tarif" id="tarif-ancr">
-                <img src="/Tarif.png"  alt="Tarif Djegra Barber">
-            </div>
+/* Changez de style*/
+button {
+  font-size: 110%;
+  background-color: #D2A932;
+  color: white;
+  padding: 14px 14px;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s
+}
 
-            <div class="localisation"id="localisation">
-                <h3>Où nous trouver ?</h3>
-                <div class="ou">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.674262914714!2d5.3641572!3d43.5144636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9f3e7fdfcaf2d%3A0xf7ff48690b8566cd!2sDjegra%20Barber!5e0!3m2!1sfr!2sfr!4v1703729764266!5m2!1sfr!2sfr" ; allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div> 
-            </div>  
-        </section>
+button:hover {
+  background-color: #0056b3;
+}
 
-        <!-- Présentation du coiffeur -->
-        <article class="conteneur-flex2">
-            <div class="presentation" id="presentation">
-                <img src="/2.bio.jpg"  alt="photo1 de dos">
-            </div>
+/* Le corps du site */
+body { 
+  display: flex;    /* utilise flexbox pour le layout */
+  align-items: center;    /* centre les éléments verticalement */
+  justify-content: flex-start;    /* aligne les éléments au début horizontalement */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 100px;   /* marge en bas du body */
+  flex-direction: column;     /* organise les éléments en colonne */
+}
 
-            <section class="Bio" id="bio">
-                <h3>À propos</h3>
-                <p>Djebril Elhamri, âgé de 25 ans, est un coiffeur talentueux exerçant depuis 2019. <br>Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles,<br> à seulement 15 minutes d'Aix-en-Provence.</p>
-                <div class="celebrité">
-                    <img src="/1.bio.jpg"  alt="photo Seth Gueko">
-                    <img src="/3.bio.jpg"  alt="photo L'antidote">
-                </div>
-            </section>
-        </article>
+/* Contenue du site */
+main {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-        <!-- Blog -->
-        <article class="blog" id="blog">
-            <div class="content-container">
-                <div class="text-content">
-                    <h3>Idées de coupes</h3>
-                    <h1>1 ] La Buzz Cut</h1>
-                    <p>La "Buzz cut" est un style très court où les cheveux sont coupés uniformément à l'aide d'une tondeuse. Cette coupe est caractérisée par sa simplicité et sa longueur uniforme sur toute la tête, généralement très courte, allant de quelques millimètres à quelques centimètres. C'est un style facile à entretenir et populaire pour sa simplicité et son aspect soigné.</p>
-                    <a href="https://eternelparis.com/blogs/cheveux-coiffure-homme/coupe-homme-court" class="bouton-en-savoir-plus">En savoir plus</a>
-                </div>
-                <div class="buzzcut">
-                    <img src="/7.jpg" alt="photo2">
-                </div>
-            </div>
-        </article>
+/* Titre*/
+.titre-principal {
+  font-size: 100px;
+  text-align: center;
+  margin-top: 180px; 
+  margin-bottom: 0px;
+  padding: 0 20%;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  white-space: nowrap;    /* empêche le retour à la ligne du titre */
+}
 
-        <!-- Les réseaux sociaux-->
-        <section>
-            <div class="social-media-callout" id="reseau">
-                <h2>Hésitez pas à me suivre sur mes réseaux</h2>
-            </div>    
-            <section class="reseaux-sociaux">
-                <!-- Profil Snapchat -->
-                <div class="reseau">
-                    <h3>Snapchat</h3>
-                    <!-- Bloc d'intégration Snapchat -->
-                    <blockquote class="snapchat-embed" data-snapchat-embed-width="416" data-snapchat-embed-height="692" data-snapchat-embed-url="https://www.snapchat.com/add/djebrilelhamri/embed" data-snapchat-embed-style="border-radius: 40px;" data-snapchat-embed-title="💈Djébril💈"></blockquote>
-                    <script async src="https://www.snapchat.com/embed.js"></script>
-                </div>
-            
-                <!-- QR Code Instagram + redirige sur instagram-->
-                <div class="reseau">
-                    <h3>Instagram</h3>
-                    <a href="https://www.instagram.com/djegra_barber/" target="_blank">
-                        <img class="insta" src="/IMG_8515.JPG" alt="Instagram">
-                    </a>
-                </div>
-        
-                <!-- Vidéo TikTok 1min30 avec sous-titrage -->
-                <div class="reseau">
-                    <h3>Tiktok</h3>
-                    <!-- Code d'intégration de la vidéo TikTok -->
-                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djegra_barber/video/7254645481823898906" data-video-id="7254645481823898906">
-                        <section>
-                        
-                        </section>
-                    </blockquote>
-                    <script async src="https://www.tiktok.com/embed.js"></script>
-                </div>
-            </section>
+/* Phrase d'accroche */
+.presentation {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20spx; 
+    margin-bottom: 50px;
+    padding: 0 20px;
+    font-family: 'League Spartan', sans-serif;
+    display: block; 
+    max-width: 1000px;
+    margin-left : 10px;
+    margin-right: 10px;
+    justify-content: center;
+    align-items : center;
+    
+}
 
-            <!-- Formulaire -->
-        <section class="form-container" id="avis">
-            <h3>Laissez nous un avis</h3>
+/* Défilement des photos */
+.photo {
+  width: 20%;
+  margin-right: 30px;
+  box-sizing: border-box;
+  border: 5px solid #000000;
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  display: inline-flex;
+  animation: scroll 70s linear infinite;    /* temps de l'animation pour augmenter ou réduire la vitesse du défilement */
+}
 
-            <!-- L'adresse mail du récepteur -->
-            <form action="mailto:ayrtonsebaa@gmail.com" method="post" enctype="text/plain">
+.galerie{
+  overflow: hidden;     /* permet de masquer le contenue qui déborde notamment en enlevant la barre de scroll horizontalement*/
+  white-space: nowrap;
+  width: 100%;
+}
 
-                <!-- Nom -->
-                <div class="form-group">
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom">
-                </div>
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1110%);    /* nécessaire pour revenir au début de la première image après la dixième image dans la boucle */
+  }
+}
 
-                <!-- Prénom -->
-                <div class="form-group">
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom">
-                </div>
+/* Grille tarifaire + localisation Google Maps */
+.conteneur-flex {
+  background-color:	#D9D9E0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #D2A932;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-                <!-- e-mail -->
-                <div class="form-group">
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email">
-                </div>
+/* Grille tarifaire */
+.tarif {
+  margin: auto;
+}
 
-                <!-- Zone de texte -->
-                <div class="form-group">
-                    <label for="avis">Votre avis :</label>
-                    <textarea id="avis" name="avis"></textarea>
-                </div>
+.tarif img {
+  width: 400px;
+  display: block;
+  border-radius: 5px;
+}
 
-                <!-- Soumettre le formulaire -->
-                <button type="submit">Envoyer l'avis</button>
-            </form>
-        </section>
+/* Localisation Google Maps*/
+.localisation {
+  margin-left: 20px;
+  margin-right: 100px;
+}
 
-                
-        </section>
-        <a href="#" class="back-to-top">Haut de page</a>
+.localisation h3{
+  font-size: 36px;
+  margin-bottom: 20px;
+  padding-right: 10%;
+  padding-top: 50px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  text-align: center;
+}
+.localisation .ou{
+  margin-bottom: 15px;
+  padding-right: 50%;
+  font-size: 30px;
+  font-family: 'League Spartan', sans-serif;
+}
 
-    </main>      
-</body> 
-</html>
+.ou iframe{
+  width:500px;
+  height:400px;
+  border: 5px solid black;
+}
+
+.localisation iframe {
+  width: 500px;
+  height: 400px;
+}
+
+/* Présentation du coiffeur*/
+.conteneur-flex2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px;
+  margin-top: 20px;
+}
+
+/* Photo de dos*/
+.presentation img {
+  width: 400px;
+  display: block;
+  margin-bottom: 20px;
+  border: 5px solid #000000;
+  border-radius: 10px;
+}
+
+/* Biographie */
+.Bio {
+  margin-left: -100px;    /* pixel en négatif pour mettre une image sur l'autre */
+  margin-right: 10px;
+}
+
+.Bio h3 {
+  font-size: 46px;
+  margin-bottom: 5px;
+  padding-top: 50px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+}
+
+.Bio p {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.Bio h3, .Bio p {
+  margin-left: 150px;
+}
+
+/* Photos avec célebrités*/
+.celebrité img {
+  height: 270px;
+  margin-right: 30px;
+  border: 5px solid #000000;
+  border-radius: 10px;  
+}
+
+/* Blog*/
+.blog {
+  margin-left: 100px;
+  margin-right: 10px;
+}
+
+.blog h3 {
+  font-size: 46px;
+  margin-bottom: 5px;
+  padding-top: 0px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  margin-top: 15px;
+}
+
+.blog h1 {
+  font-size: 42px;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.blog p {
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+.content-container {
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+}
+
+.text-content {
+  padding: 0 20px 20px 20px;
+  background-color: #D9D9E0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+/* Photo Buzzcut*/
+.buzzcut img {
+  width: 500px;
+  border: 5px solid #000000;
+  margin-left: 30px;
+  border-radius: 10px;
+}
+
+/* Bouton en savoir plus qui mène sur une autre page*/
+.bouton-en-savoir-plus {
+  display: inline-block;
+  padding: 10px 150px;
+  background-color: #D2A932;
+  color: white;
+  text-decoration: none;    /* enlève le souligne sur le bouton */
+  border-radius: 5px;
+  font-weight: bold;    /* met le texte en gras */
+  font-size: 20px;
+  transition: background-color 0.3s
+}
+
+.bouton-en-savoir-plus:hover {
+  background-color: #0056b3;
+}
+
+/* Les réseaux sociaux */
+.social-media-callout h2 {
+  font-size: 36px;
+  margin-bottom: 10px;    /* Espace entre le titre et les réseaux */
+  padding-top: 20px;
+  font-family: 'Rubik Doodle Shadow', sans-serif;
+  text-align: center;
+  color: #000000;
+}
+
+.reseaux-sociaux {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: auto;
+  padding: 30px 0;
+  gap: 100px;    /* espace entre les réseaux sociaux */
+  flex-wrap: wrap;    /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+}
+
+.reseau {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 0;
+}
+
+/* Réseau Snapchat */
+.snapchat-embed {
+  border-radius: 40px;
+}
+
+/* Réseau Instagram */
+.insta {
+  width: 300px;
+  height: auto;
+}
+
+/* Formulaire*/
+.form-container {
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: #D9D9E0;
+  border-color: #000;
+  border-radius: 10px; 
+}
+
+/* Nom + Prénom + E-mail + Zone de texte*/
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 100px;
+}
+
+/* Ancrage qui remonte vers le haut*/
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px; 
+  background-color: #D2A932;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+
+.back-to-top:hover {
+  background-color: #0056b3;
+}
