@@ -217,7 +217,13 @@ main {
 .tarif img {
   width: 400px;
   display: block;
+  border-radius: 5px;
 }
+
+.tarif.alternate-style img {
+  content: url('/Tarif-noir.png');
+}
+
 
 /* Localisation Google Maps*/
 .localisation {
@@ -310,8 +316,9 @@ main {
 .blog h3 {
   font-size: 46px;
   margin-bottom: 5px;
-  padding-top: 50px;
+  padding-top: 0px;
   font-family: 'Rubik Doodle Shadow', sans-serif;
+  margin-top: 15px;
 }
 
 .blog h1 {
@@ -460,5 +467,5 @@ main {
 
 
 .back-to-top:hover {
-    background-color: #D2A932;
+  background-color: #0056b3;
 }
