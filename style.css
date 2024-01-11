@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
+/* personnalisation de la barre de défilement pour les navigateurs WebKit */
 
 /* ajoute un effet de fluidité aux défilements */
 html {
@@ -121,7 +122,7 @@ main {
 .titre-principal {
   font-size: 100px;
   text-align: center;
-  margin-top: 180px; 
+  margin-top: 150px; 
   margin-bottom: 0px;
   padding: 0 20%;
   font-family: 'Rubik Doodle Shadow', sans-serif;
@@ -143,6 +144,10 @@ main {
     justify-content: center;
     align-items : center;
     
+}
+
+.presentation-h2{
+  display: none;
 }
 
 /* Défilement des photos */
