@@ -3,12 +3,13 @@
 <head>
     <title>Djegra Barber</title>
     <link id="styleSheet" rel="stylesheet" type="text/css" href="style.css">
-    <meta name="description" content="bla bla" >
+    <meta name="description" content="Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées.
+    Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité." >
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -39,18 +40,18 @@
         </nav>
     </header>
 
-    <!-- Autres contenus de la page -->
+    <!-- Changement de thème -->
     <script>
         function changeStyle() {
             var stylesheet = document.getElementById('styleSheet');
-            var image = document.querySelector('.tarif img'); // Assurez-vous que le sélecteur correspond à votre image
+            var image = document.querySelector('.tarif img');
 
             if (stylesheet.href.includes("style.css")) {
-                stylesheet.href = 'alternate_style.css'; // Le chemin vers votre autre feuille de style
-                image.src = '/tarif/Tarif.png' // Le chemin vers votre nouvelle image
+                stylesheet.href = 'alternate_style.css';
+                image.src = '/tarif/Tarif-noir.png'
             } else {
-                stylesheet.href = 'style.css'; // Le chemin de retour vers la feuille de style originale
-                image.src = '/tarif/Tarif.png'; // Le chemin de retour vers l'image originale
+                stylesheet.href = 'style.css';
+                image.src = '/tarif/Tarif.png';
             }
         }
     </script>
@@ -156,7 +157,7 @@
                 <div class="reseau">
                     <a href="https://www.instagram.com/djegra_barber/" target="_blank">
                         <h3>Instagram</h3>
-                        <img class="insta" src="/réseaux sociaux/IMG_8515.JPG" alt="Instagram">
+                        <img class="insta" src="/réseaux-sociaux/IMG_8515.JPG" alt="Instagram">
                     </a>
                 </div>
         
@@ -167,7 +168,7 @@
                     </a>
                     <!-- Code d'intégration de la vidéo TikTok -->
                     <video width="360" height="640" controls>
-                        <source src="/réseaux sociaux/Snaptik.app_7254645481823898906.mp4" type="video/mp4">
+                        <source src="/réseaux-sociaux/Snaptik.app_7254645481823898906.mp4" type="video/mp4">
                     </video>
                 </div>
             </section>
