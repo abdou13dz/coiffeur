@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400;700&family=Rubik+Doodle+Shadow&display=swap');
-/* personnalisation de la barre de défilement pour les navigateurs WebKit */
 
 /* ajoute un effet de fluidité aux défilements */
 html {
   scroll-behavior: smooth;
 } 
-
 
 /* règle pour tout les éléments */
 * {
@@ -385,6 +383,12 @@ main {
   width: 300px;
   height: auto;
 }
+
+.tiktok-embed {
+  max-width: 605px;
+  min-width: 325px;
+}
+
 
 /* Style des titres */
 .reseau h3 {
