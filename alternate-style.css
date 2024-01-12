@@ -395,6 +395,11 @@ main {
   border-radius: 15px;
 }
 
+.tiktok-embed {
+  max-width: 605px;
+  min-width: 325px;
+}
+
 /* Style des titres */
 .reseau h3 {
   text-align: center;
