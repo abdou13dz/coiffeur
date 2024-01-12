@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <title>Djegra Barber</title>
-    <link id="styleSheet" rel="stylesheet" type="text/css" href="style.css">
-    <meta name="description" content="Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées.
-    Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité." >
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta charset="utf-8">
-</head>
+    <head>
+        <title>Djegra Barber</title>
+        <link id="styleSheet" rel="stylesheet" type="text/css" href="style.css">
+        <meta name="description" content="Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées. Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité." >
+    
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta charset="utf-8">
+        
+    </head>
 
 <body>
     <header>
@@ -46,9 +46,12 @@
             var stylesheet = document.getElementById('styleSheet');
             var image = document.querySelector('.tarif img');
 
-            if (stylesheet.href.includes("style.css")) {
+
+            var currentStyle = stylesheet.href.split('/').pop();
+
+            if (currentStyle === "style.css") {
                 stylesheet.href = 'alternate_style.css';
-                image.src = '/tarif/Tarif-noir.png'
+                image.src = '/tarif/Tarif-noir.png';
             } else {
                 stylesheet.href = 'style.css';
                 image.src = '/tarif/Tarif.png';
@@ -114,7 +117,7 @@
 
             <section class="Bio" id="bio">
                 <h3>À propos</h3>
-                <p>Djebril Elhamri, âgé de 25 ans, est un coiffeur talentueux exerçant depuis 2019. <br>Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles,<br> à seulement 15 minutes d'Aix-en-Provence.</p>
+                <p>« Djebril Elhamri, âgé de 25 ans, est un coiffeur talentueux exerçant depuis 2019. <br>Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles,<br> à seulement 15 minutes d'Aix-en-Provence. »</p>
                 <div class="celebrité">
                     <img src="/photos/1.bio.jpg"  alt="photo Seth Gueko">
                     <img src="/photos/3.bio.jpg"  alt="photo L'antidote">
@@ -166,11 +169,17 @@
                     <a href="https://www.tiktok.com/@djegra_barber" target="_blank">
                         <h3>Tiktok</h3>
                     </a>
-                    <!-- Code d'intégration de la vidéo TikTok -->
-                    <video width="360" height="640" controls>
-                        <source src="/réseaux-sociaux/Snaptik.app_7254645481823898906.mp4" type="video/mp4">
-                    </video>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djegra_barber/video/7254645481823898906" data-video-id="7254645481823898906">
+                        <div>
+                            <a target="_blank" title="@djegra_barber" href="https://www.tiktok.com/@djegra_barber?refer=embed">@djegra_barber</a> UN DEGRADÉ LA, UN DEGRADÉ LA 😂
+                            
+                            <a target="_blank" title="♬ love nwantinti (ah ah ah) - CKay" href="https://www.tiktok.com/music/love-nwantinti-ah-ah-ah-6738456583379880706?refer=embed">♬ love nwantinti (ah ah ah) - CKay</a>
+                        </div>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
                 </div>
+                         
+                
             </section>
 
             <!-- Formulaire -->
