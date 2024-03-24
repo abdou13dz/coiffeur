@@ -1,50 +1,258 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Ma Page de Présentation</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<html lang="fr">
+    <head>
+        <title>DJEGRA BARBER</title>
+        <link id="styleSheet" rel="stylesheet" type="text/css" href="style.css">
+        <meta name="description" content="Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées. Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité." >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <meta charset="utf-8">
+        
+    </head>
+
 <body>
-    <nav class="menu"> 
-        <img src="chemin_vers_votre_logo.png" alt="Logo" class="logo"> <!-- Ajoutez cette ligne -->
-        <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#tarif-ancr">inscription</a></li>
-            <li><a href="https://maps.app.goo.gl/uLJPkfnhcENyx9BHA" target="_blank">sports</a></li>
-            <li><a href="#presentation">Hébergements</a></li>
-            <li><a href="#blog">Restauration</a></li>
-            <li><a href="#reseau">Où cela se passe</a></li>
-        </ul>
-    </nav>
+    <header>
+        <a href="#">
+            <img src="logo djegra.png" class="logo" alt="Logo Djegra Barber">
+        </a>
+        
+        <!-- Menu de navigation -->
+        <nav class="menu"> 
+            <ul>
+                <li><a href="#" id="link-accueil">Accueil</a></li>
+                <li><a href="#tarif-ancr">Tarifs</a></li>
+                <li><a href="https://maps.app.goo.gl/uLJPkfnhcENyx9BHA" target="_blank">Accès</a></li>
+                <li><a href="#presentation">Coiffeur</a></li>
+                <li><a href="#blog">Idées</a></li>
+                <li><a href="#reseau">Réseaux</a></li>
+                <li><a href="#avis">Retour</a></li>
+                <!-- Ajout du bouton Changer de Style -->
+                <li class="style-button">
+                    <button onclick="changeStyle()">Changer de Thème</button>
+                </li>
+            </ul>
+        
+        </nav>
+    </header>
 
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div id="countdown">
-        <p id="timer"></p>
-    </div>
-
+    <!-- Changement de thème -->
     <script>
-        var countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
+        function changeStyle() {
+            var stylesheet = document.getElementById('styleSheet');
+            var image = document.querySelector('.tarif img');
 
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("timer").innerHTML = days + "j " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+            var currentStyle = stylesheet.href.split('/').pop();
 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "EXPIRÉ";
+            if (currentStyle === "style.css") {
+                stylesheet.href = 'alternate_style.css';
+                image.src = 'tarif/tarif-noir.png';
+            } else {
+                stylesheet.href = 'style.css';
+                image.src = 'tarif/tarif-blanc.png';
             }
-        }, 1000);
+        }
     </script>
 
-</body>
+
+    <!-- Titre et phrase d'accroche -->
+    <main>
+        <h1 class="titre-principal">DJEGRA BARBER</h1>
+        <div class="presentation">
+            Bienvenue chez Djegra Barber, notre salon de coiffure vous accueille pour des coupes soignées.<br> Simplicité et expertise à votre service. Venez pour le style, restez pour la qualité.
+        </div>
+
+        <!-- Défilement des photos -->
+        <div class="galerie">
+            <div class="défilé">
+                <img src="photos/1.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/2.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/3.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/4.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/5.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/6.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/7.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/8.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/9.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/10.jpg" alt="Texte de l’infobulle" class="photo">
+                <!-- Duplication des images pour simuler une boucle -->
+                <img src="photos/1.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/2.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/3.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/4.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/5.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/6.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/7.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/8.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/9.jpg" alt="Texte de l’infobulle" class="photo">
+                <img src="photos/10.jpg" alt="Texte de l’infobulle" class="photo">
+            </div>
+        </div>
+
+        <!-- Grille tarifaire + localisation Google Maps -->
+        <section class="conteneur-flex">
+            <div class="tarif" id="tarif-ancr">
+                <img src="tarif/tarif-blanc.png"  alt="Tarif Djegra Barber">
+            </div>
+            
+            <div class="localisation" id="localisation">
+                <h3>Où nous trouver ?</h3>
+                <div class="ou">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11573.674262914714!2d5.3641572!3d43.5144636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c9f3e7fdfcaf2d%3A0xf7ff48690b8566cd!2sDjegra%20Barber!5e0!3m2!1sfr!2sfr!4v1703729764266!5m2!1sfr!2sfr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> 
+            </div>  
+        </section>
+
+        <!-- Présentation du coiffeur -->
+        <article class="conteneur-flex2">
+            <div class="presentation" id="presentation">
+                <img src="photos/2.bio.jpg"  alt="photo1 de dos">
+            </div>
+
+            <section class="Bio" id="bio">
+                <h3>À propos</h3>
+                <p>« Djebril, âgé de 23 ans, est un coiffeur talentueux exerçant depuis 2019. <br>Formé à Aix-en-Provence, il s'est spécialisé dans l'art des dégradés, technique qu'il maîtrise avec une précision remarquable. Ancien collaborateur du salon Chez Byro, Djebril a su acquérir une expérience solide et diversifiée. Aujourd'hui, il gère son propre salon de coiffure situé aux Milles,<br> à seulement 15 minutes d'Aix-en-Provence. »</p>
+                <div class="celebrité">
+                    <img src="photos/1.bio.jpg"  alt="photo Seth Gueko">
+                    <img src="photos/3.bio.jpg"  alt="photo L'antidote">
+                </div>
+            </section>
+        </article>
+
+        <!-- Blog -->
+        <article class="blog" id="blog">
+            <div class="content-container">
+                <div class="text-content">
+                    <h3>Idées de coupes</h3>
+                    <h2>1 ] La Buzz Cut</h2>
+                    <p>La "Buzz cut" est un style très court où les cheveux sont coupés uniformément à l'aide d'une tondeuse. Cette coupe est caractérisée par sa simplicité et sa longueur uniforme sur toute la tête, généralement très courte, allant de quelques millimètres à quelques centimètres. C'est un style facile à entretenir et populaire pour sa simplicité et son aspect soigné.</p>
+                    <a href="https://eternelparis.com/blogs/cheveux-coiffure-homme/coupe-homme-court" class="bouton-en-savoir-plus">En savoir plus</a>
+                </div>
+                <div class="buzzcut">
+                    <img src="photos/7.jpg" alt="photo2">
+                </div>
+            </div>
+        </article>
+
+        <!-- Les réseaux sociaux-->
+        <section>
+            <div class="social-media-callout" id="reseau">
+                <h2>Hésitez pas à me suivre sur mes réseaux</h2>
+            </div>    
+            <section class="reseaux-sociaux">
+                <!-- Profil Snapchat -->
+                <div class="reseau-snap">
+                    <a href="https://www.snapchat.com/add/djebrilelhamri" target="_blank">
+                        <h3>Snapchat</h3>
+                    </a>
+                    <!-- Bloc d'intégration Snapchat -->
+                    <blockquote class="snapchat-embed" data-snapchat-embed-width="416" data-snapchat-embed-height="692" data-snapchat-embed-url="https://www.snapchat.com/add/djebrilelhamri/embed" data-snapchat-embed-style="border-radius: 40px;" data-snapchat-embed-title="💈Djébril💈"></blockquote>
+                    <script async src="https://www.snapchat.com/embed.js"></script>
+                </div>
+            
+                <!-- QR Code Instagram + redirige sur instagram-->
+                <div class="reseau">
+                    <a href="https://www.instagram.com/djegra_barber/" target="_blank">
+                        <h3>Instagram</h3>
+                        <img class="insta" src="réseaux-sociaux/IMG_8515.JPG" alt="Instagram">
+                    </a>
+                </div>
+        
+                <!-- Vidéo TikTok 1min30 avec sous-titrage -->
+                <div class="reseau">
+                    <a href="https://www.tiktok.com/@djegra_barber" target="_blank">
+                        <h3>Tiktok</h3>
+                    </a>
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@djegra_barber/video/7254645481823898906" data-video-id="7254645481823898906">
+                        <div>
+                            <a target="_blank" title="@djegra_barber" href="https://www.tiktok.com/@djegra_barber?refer=embed">@djegra_barber</a> UN DEGRADÉ LA, UN DEGRADÉ LA 😂
+                            
+                            <a target="_blank" title="♬ love nwantinti (ah ah ah) - CKay" href="https://www.tiktok.com/music/love-nwantinti-ah-ah-ah-6738456583379880706?refer=embed">♬ love nwantinti (ah ah ah) - CKay</a>
+                        </div>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
+                </div>
+                         
+                
+            </section>
+
+            <!-- Formulaire -->
+        <section class="form-container" id="avis">
+            <h3>Laissez nous un avis</h3>
+
+            <!-- L'adresse mail du récepteur -->
+            <form action="mailto:dejgrabarber@gmail.com" method="post" enctype="text/plain">
+
+                <!-- Nom -->
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom">
+                </div>
+
+                <!-- Prénom -->
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom">
+                </div>
+
+                <!-- e-mail -->
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <!-- Zone de texte -->
+                <div class="form-group">
+                    <label for="avis-form">Votre avis :</label>
+                    <textarea id="avis-form" name="avis"></textarea>
+                </div>
+
+                <!-- Soumettre le formulaire -->
+                <button type="submit">Envoyer l'avis</button>
+            </form>
+        </section>
+
+                
+        </section>
+        <a href="#" class="back-to-top">Haut de page</a>
+
+    </main>      
+</body> 
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var offset = 140; // Hauteur de votre barre de navigation
+        var linkAccueil = document.getElementById('link-accueil');
+
+        document.querySelectorAll('.menu a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        if (linkAccueil) {
+            linkAccueil.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
